@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邪恶论坛 - 特朗普负面评论专区</title>
+    <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+        }
+        
+        .neon-text {
+            color: #fff;
+            text-shadow: 
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px #0fa,
+                0 0 82px #0fa,
+                0 0 92px #0fa,
+                0 0 102px #0fa,
+                0 0 151px #0fa;
+            animation: flicker 1.5s infinite alternate;
+        }
+        
+        .neon-border {
+            border: 2px solid #0fa;
+            box-shadow: 
+                0 0 5px #0fa,
+                0 0 10px #0fa,
+                0 0 15px #0fa;
+            animation: border-pulse 2s infinite alternate;
+        }
+        
+        .post-card {
+            background-color: rgba(37, 40, 42, 0.7);
+            border-left: 4px solid #0fa;
+            transition: all 0.3s ease;
+        }
+        
+        .post-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 0 15px rgba(0, 255, 170, 0.5);
+        }
+        
+        .time-display {
+            background: linear-gradient(90deg, rgba(0,0,0,0), rgba(15,250,170,0.3), rgba(0,0,0,0));
+            padding: 10px 20px;
+            letter-spacing: 2px;
+        }
+        
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow: 
+                    0 0 4px #fff,
+                    0 0 11px #fff,
+                    0 0 19px #fff,
+                    0 0 40px #0fa,
+                    0 0 80px #0fa,
+                    0 0 90px #0fa,
+                    0 0 100px #0fa,
+                    0 0 150px #0fa;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+        
+        @keyframes border-pulse {
+            0% {
+                box-shadow: 
+                    0 0 5px #0fa,
+                    0 0 10px #0fa,
+                    0 0 15px #0fa;
+            }
+            100% {
+                box-shadow: 
+                    0 0 10px #0fa,
+                    0 0 20px #0fa,
+                    0 0 30px #0fa;
+            }
+        }
+        
+        .corner-highlight {
+            position: relative;
+        }
+        
+        .corner-highlight::before, .corner-highlight::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #0fa;
+            box-shadow: 0 0 10px #0fa;
+        }
+        
+        .corner-highlight::before {
+            top: 0;
+            left: 0;
+            border-right: none;
+            border-bottom: none;
+        }
+        
+        .corner-highlight::after {
+            bottom: 0;
+            right: 0;
+            border-left: none;
+            border-top: none;
+        }
+    </style>
+<link rel="stylesheet" href="邪恶论坛风格样式.css">
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-4xl mx-auto">
+        <!-- 头部标题 -->
+        <header class="mb-8 text-center corner-highlight py-4">
+            <h1 class="text-3xl md:text-5xl font-bold neon-text mb-2">邪恶论坛</h1>
+            <p class="text-xl md:text-2xl neon-text">特朗普负面评论专区</p>
+        </header>
+        
+        <!-- 时间显示模块 -->
+        <div class="time-display neon-text text-center mb-8 rounded">
+            <div class="text-lg md:text-xl">
+                <span id="current-date"></span>
+                <span class="mx-2">|</span>
+                <span id="current-time"></span>
+            </div>
+        </div>
+        
+        <!-- 帖子展示区域 -->
+        <div class="space-y-6">
+            <div class="post-card p-4 rounded">
+                <div class="flex items-center mb-2">
+                    <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center mr-3">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <span class="text-green-400 font-bold">匿名用户</span>
+                    <span class="text-gray-400 ml-auto">2024-03-15</span>
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                    特朗普在任期间的政策完全是一场灾难，他分裂了美国社会，加剧了种族矛盾。他的"美国优先"政策实际上只是为富人谋福利，普通民众的生活质量反而下降了。
+                </p>
+            </div>
+            
+            <div class="post-card p-4 rounded">
+                <div class="flex items-center mb-2">
+                    <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center mr-3">
+                        <i class="fas fa-user-ninja"></i>
+                    </div>
+                    <span class="text-green-400 font-bold">暗影猎手</span>
+                    <span class="text-gray-400 ml-auto">2024-03-10</span>
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                    特朗普的商业帝国建立在欺诈和剥削之上。他多次利用破产法逃避债务，让承包商和工人承担损失。这种人根本不配担任任何公职。
+                </p>
+            </div>
+            
+            <div class="post-card p-4 rounded">
+                <div class="flex items-center mb-2">
+                    <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center mr-3">
+                        <i class="fas fa-ghost"></i>
+                    </div>
+                    <span class="text-green-400 font-bold">政治幽灵</span>
+                    <span class="text-gray-400 ml-auto">2024-03-05</span>
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                    特朗普对新冠疫情的应对堪称美国历史上最严重的领导失败之一。他淡化疫情威胁，传播错误信息，导致数十万美国人丧生。这是不可原谅的罪行。
+                </p>
+            </div>
+            
+            <div class="post-card p-4 rounded">
+                <div class="flex items-center mb-2">
+                    <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center mr-3">
+                        <i class="fas fa-skull"></i>
+                    </div>
+                    <span class="text-green-400 font-bold">死亡预言</span>
+                    <span class="text-gray-400 ml-auto">2024-02-28</span>
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                    特朗普对环境政策的漠视将给后代带来灾难性后果。他退出巴黎气候协定，放松环保法规，完全是为了短期经济利益牺牲地球的未来。
+                </p>
+            </div>
+            
+            <div class="post-card p-4 rounded">
+                <div class="flex items-center mb-2">
+                    <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center mr-3">
+                        <i class="fas fa-mask"></i>
+                    </div>
+                    <span class="text-green-400 font-bold">真相揭露者</span>
+                    <span class="text-gray-400 ml-auto">2024-02-20</span>
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                    特朗普与俄罗斯的关系令人深感忧虑。他多次在公开场合为普京辩护，拒绝批评俄罗斯的侵略行为，这引发了关于他是否受到外国势力影响的严重质疑。
+                </p>
+            </div>
+        </div>
+        
+        <!-- 页脚 -->
+        <footer class="mt-12 text-center text-gray-500 text-sm">
+            <p>created by <a href="https://space.coze.cn" class="text-green-400 hover:text-green-300">coze space</a></p>
+            <p>页面内容均由 AI 生成，仅供参考</p>
+        </footer>
+    </div>
+    
+    <script>
+        // 更新时间显示
+        function updateTime() {
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('zh-CN', {year: 'numeric', month: '2-digit', day: '2-digit'});
+            const timeStr = now.toLocaleTimeString('zh-CN', {hour12: false});
+            
+            document.getElementById('current-date').textContent = dateStr;
+            document.getElementById('current-time').textContent = timeStr;
+        }
+        
+        // 初始更新
+        updateTime();
+        
+        // 每秒更新一次时间
+        setInterval(updateTime, 1000);
+        
+        // 鼠标移动高亮效果
+        document.addEventListener('mousemove', function(e) {
+            const highlight = document.createElement('div');
+            highlight.className = 'absolute w-4 h-4 bg-green-400 rounded-full pointer-events-none';
+            highlight.style.left = `${e.clientX - 8}px`;
+            highlight.style.top = `${e.clientY - 8}px`;
+            highlight.style.opacity = '0.7';
+            highlight.style.filter = 'blur(2px)';
+            document.body.appendChild(highlight);
+            
+            setTimeout(() => {
+                highlight.style.transform = 'scale(2)';
+                highlight.style.opacity = '0';
+                setTimeout(() => highlight.remove(), 300);
+            }, 50);
+        });
+    </script>
+</body>
+</html>
